@@ -5,7 +5,7 @@ import assets from "../assets/assets";
 import CartCard from "../components/Cart/CartCard";
 import { useAuth } from "../contexts/AuthContext";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCart } from "../redux/actions/courseActions";
+import { buyCourse, getAllCart } from "../redux/actions/courseActions";
 
 const Cart = () => {
   const { userData } = useAuth();
@@ -26,6 +26,14 @@ const Cart = () => {
     } else {
       return 0;
     }
+  };
+  const buyAll = () => {
+    let courseIds = [];
+    data?.cart?.map((item) => {
+      courseIds.push(item._id)
+    });
+    console.log("Array", courseIds);
+    dispatch(buyCourse({ userId: userData?._id, CourseId: courseIds }));
   };
 
   return (
@@ -55,7 +63,10 @@ const Cart = () => {
                   </h1>
                 </div>
               </div>
-              <div className="w-full h-[40%] rounded-[10rem] bg-lime-400 flex items-center justify-center cursor-pointer shadow-lg">
+              <div
+                className="w-full h-[40%] rounded-[10rem] bg-lime-400 flex items-center justify-center cursor-pointer shadow-lg"
+                onClick={() => buyAll()}
+              >
                 <h1 className="text-[2.2rem] font-semibold">Buy Now</h1>
               </div>
             </div>

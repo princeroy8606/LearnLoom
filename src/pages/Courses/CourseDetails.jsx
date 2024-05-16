@@ -15,8 +15,8 @@ const CourseDetails = () => {
   const dispatch = useDispatch();
 
   const handleBuy = () => {
-    dispatch(buyCourse({ userId: userData?._id, CourseId: data?._id }));
-  };
+    dispatch(buyCourse({ userId: userData?._id, CourseId:[data?._id] }));
+  };  
 
   useEffect(() => {
     const t1 = gsap.timeline();
