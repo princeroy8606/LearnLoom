@@ -20,14 +20,13 @@ const CourseDetails = () => {
 
   useEffect(() => {
     const t1 = gsap.timeline();
-    t1.fromTo(".name", { x: 100 }, { x: 0 }, "+=1");
-
+    t1.fromTo(".name", { x: 100 }, { x: 0 });
     t1.fromTo(
       ".features",
       {
         y: 100,
         opacity: 0,
-        duration: 1,
+        duration: 0.5,
       },
       { y: 0, opacity: 1, stagger: 0.2 }
     );
