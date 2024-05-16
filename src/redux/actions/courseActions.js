@@ -20,6 +20,7 @@ export const buyCourse = createAsyncThunk(
       const { data } = await api.buyOneCourse(Data);
       if (data) PaymentLaunch(data, dispatch);
     } catch (err) {
+      console.log(err)
       toast.error(err?.response?.data?.error);
     }
   }
