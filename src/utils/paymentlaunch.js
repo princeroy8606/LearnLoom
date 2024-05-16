@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 import { successPaymentRes } from "../api/api";
 
 export const PaymentLaunch = (order, dispatch) => {
-  console.log(order.notes.u_id);
+  console.log(order.notes);
   var options = {
     key: "rzp_test_BVclXIQdCra5rg",
     amount: "50000",
@@ -13,7 +13,7 @@ export const PaymentLaunch = (order, dispatch) => {
     handler: function (response) {
     //   console.log("Payment successful:", response);
       successPaymentRes({
-        data: order.notes.u_id,
+        data: order.notes,
         payment_intent: response.razorpay_payment_id,
       })
         .then((res) => {
