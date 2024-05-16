@@ -76,17 +76,14 @@ const CourseDetails = () => {
                       <h2 className="text-white"> Buy Now</h2>
                     </div>
                     <h2>-or-</h2>
-                    <div
-                      className="w-[40%] h-12 bg-gray-700 rounded-[50rem] flex items-center justify-center cursor-pointer"
-                      onClick={() => handleAddtoCart()}
-                    >
-                      <h2 className="text-white">
-                        {" "}
-                        {data?.cart?.includes(userData?._id)
-                          ? "Added to Cart"
-                          : "Add to cart"}{" "}
-                      </h2>
-                    </div>
+                    {!userData?.cart?.includes(data?._id) && (
+                      <div
+                        className="w-[40%] h-12 bg-gray-700 rounded-[50rem] flex items-center justify-center cursor-pointer"
+                        onClick={() => handleAddtoCart()}
+                      >
+                        <h2 className="text-white">Add to Cart</h2>
+                      </div>
+                    )}
                   </>
                 )}
               </div>

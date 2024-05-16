@@ -15,7 +15,6 @@ const CourseCard = ({ data }) => {
     if (userData)
       dispatch(addCourseToCart({ userId: userData?._id, courseId: data?._id }));
   };
-  console.log(userData);
 
   const checkcartStatus = () => {
     if (data?.enrolled?.includes(userData?._id)) return null;
