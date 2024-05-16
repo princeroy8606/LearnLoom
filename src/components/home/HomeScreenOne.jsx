@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import assets from "../../assets/assets";
 import gsap from "gsap";
+import { useNavigate } from "react-router-dom";
 
 const HomeScreenOne = () => {
+  const navigate = useNavigate()
   useEffect(() => {
     const t1 = gsap.timeline();
     t1.fromTo(
@@ -42,7 +44,7 @@ const HomeScreenOne = () => {
             expert feedback you wont find in any other platform
           </p>
         </div>
-        <div className="w-[25%] h-12 bg-black rounded-[50rem] flex items-center justify-center cursor-pointer ani-text">
+        <div className="w-[25%] h-12 bg-black rounded-[50rem] flex items-center justify-center cursor-pointer ani-text" onClick={()=>navigate('/courses')}>
           <h2 className="text-white">Get Started →</h2>
         </div>
       </div>
