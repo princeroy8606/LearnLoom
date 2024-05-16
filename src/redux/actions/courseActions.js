@@ -14,11 +14,11 @@ export const fetchCourses = createAsyncThunk("courses/all", async () => {
 
 export const buyCourse = createAsyncThunk(
   "courses/buy",
-  async (Data, dispatch) => {
+  async (Data) => {
     console.log(Data);
     try {
       const { data } = await api.buyOneCourse(Data);
-      if (data) PaymentLaunch(data, dispatch);
+      if (data) PaymentLaunch(data);
     } catch (err) {
       console.log(err)
       toast.error(err?.response?.data?.error);

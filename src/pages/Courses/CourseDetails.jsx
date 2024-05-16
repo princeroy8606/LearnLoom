@@ -15,9 +15,7 @@ const CourseDetails = () => {
   const dispatch = useDispatch();
 
   const handleBuy = () => {
-    dispatch(
-      buyCourse({ userId: userData?._id, CourseId: data?._id }, dispatch)
-    );
+    dispatch(buyCourse({ userId: userData?._id, CourseId: data?._id }));
   };
 
   useEffect(() => {
@@ -151,10 +149,9 @@ const CourseDetails = () => {
           </div>
         </div>
       </div>
-        <DetailsPgeTwo data={data} />
+      <DetailsPgeTwo data={data} />
       <Footer />
     </div>
-   
   );
 };
 
