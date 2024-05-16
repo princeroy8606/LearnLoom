@@ -20,7 +20,6 @@ const Landing = () => {
   }, []);
 
   console.log(courses);
-
   return (
     <div className="w-[100vw]   flex flex-col items-center">
       <img

@@ -12,6 +12,7 @@ import {
   isValidName,
   isValidPhoneNumber,
 } from "../../utils/validityChecks";
+import gsap from "gsap";
 
 const Auth = () => {
   const dispatch = useDispatch();
@@ -77,20 +78,28 @@ const Auth = () => {
 
   console.log(errorArray);
 
+  // Animatinons 
+
+  useEffect(()=>{
+    const t1 = gsap.timeline()
+    t1.fromTo(".ani-text",{x:-800,opacity:0},{x:0,opacity:1,duration:1})
+    t1.fromTo(".ani-img",{y:500,opacity:0},{y:0,opacity:1,duration:1})
+  },[])
+
   return (
     <div className="w-screen h-auto flex flex-col items-center relative">
-      <div className="absolute w-screen flex items-center h-auto justify-center">
+      <div className="absolute w-screen flex items-center h-auto justify-center z-20">
         <NavBar />
       </div>
       <div className="auth-bg w-[100%] h-[100vh] flex items-end justify-around">
         <div className="h-[100%] w-[55%] flex justify-end relative">
-          <h1 className="text-[15rem] font-semibold text-white text-left">
+          <h1 className="text-[15rem] font-semibold text-white text-left ani-text">
             Hurry Up Friends
           </h1>
           <img
             src={assets.Images.Girl}
             alt="girl"
-            className="h-[90%] w-[100%] object-contain hidden lg:block absolute bottom-0"
+            className="h-[90%] w-[100%] object-contain hidden lg:block absolute bottom-0 ani-img"
           />
         </div>
         <div
