@@ -42,9 +42,7 @@ const CourseCard = ({ data }) => {
             <h1 className="font-semibold text-gray-500">2hr</h1>
           </div>
         </div>
-        {/* <p className="text-[.8rem] font-normal text-lime-800">
-          {data?.description}
-        </p> */}
+
         <div className="w-full flex justify-between">
           <h1 className="text-[1.5rem] font-medium text-lime-900">
             {data?.enrolled?.includes(userData?._id)

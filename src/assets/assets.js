@@ -16,6 +16,8 @@ import Caption from "../assets/images/caption.png";
 import Badge from "../assets/images/premium-badge.png";
 import Lamb from "../assets/images/lamp.png";
 import Tick from "../assets/images/tick.png";
+import ProfileIcon from "../assets/images/profile-icon.png";
+import Man from "../assets/images/man.png";
 
 const Images = {
   HomeLeftImage,
@@ -36,6 +38,8 @@ const Images = {
   Badge,
   Lamb,
   Tick,
+  ProfileIcon,
+  Man
 };
 
 const Fonts = {};

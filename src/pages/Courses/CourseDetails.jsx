@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { addCourseToCart, buyCourse } from "../../redux/actions/courseActions";
 import { gsap } from "gsap";
 import DetailsPgeTwo from "./DetailsPgeTwo";
+import DetailsPageThree from "./DetailsPageThree";
 
 const CourseDetails = () => {
   const { data } = useLocation()?.state;
@@ -163,6 +164,7 @@ const CourseDetails = () => {
         </div>
       </div>
       <DetailsPgeTwo data={data} />
+      <DetailsPageThree />
       <Footer />
     </div>
   );
