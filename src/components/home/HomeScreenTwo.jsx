@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import assets from "../../assets/assets";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 const HomeScreenTwo = () => {
+  useEffect(()=>{
+    gsap.registerPlugin(ScrollTrigger)
+    gsap.to('.c',{
+      ScrollTrigger:{
+        target:".ani-img",
+        start:"top top",
+        end:"bottom center",
+      },
+      x:500
+    })
+  },[])
   return (
     <div className="w-[80%] h-screen flex justify-between py-[4rem] ">
       <div className="w-[60%] h-[100%]  flex flex-col justify-between relative">
         <img
           src={assets.Images.Stroke}
           alt="stroke"
-          className=" absolute z-1 left-[30%] top-[4%] w-[50%]"
+          className=" absolute z-1 left-[30%] top-[4%] w-[50%] ani-img"
         />
         <div className="w-[100%] h-[40%] z-10">
           <h1 className="text-[3.5rem] font-medium">

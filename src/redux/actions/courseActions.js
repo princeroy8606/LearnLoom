@@ -27,6 +27,7 @@ export const buyCourse = createAsyncThunk(
 );
 
 export const addCourseToCart = createAsyncThunk("course/cart", async (courseData) => {
+  console.log(courseData)
   try {
     const { data } = await api.addToCart(courseData);
     if(data) toast.success("added to Cart 🛒")

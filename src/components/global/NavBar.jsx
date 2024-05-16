@@ -12,7 +12,7 @@ const NavBar = () => {
       <div className="w-fit h-[90%] bg-transparent flex items-center cursor-pointer">
         <h1>LearnLoom</h1>
       </div>
-      <div className="w-[50%] h-[90%] bg-transparent flex items-center justify-between text-gray-600 ">
+      <div className="w-[30%] h-[90%] bg-transparent flex items-center justify-between text-gray-600 " style={{width:userData && "40%"}}>
         <h1
           className="cursor-pointer  hover:text-black px-3 py-1 rounded-full"
           style={{
@@ -33,16 +33,18 @@ const NavBar = () => {
         >
           Courses
         </h1>
-        <h1
-          className="cursor-pointer  hover:text-black px-3 py-1 rounded-full"
-          style={{
-            color: location.pathname == "/mycourses" ? "black" : null,
-            backgroundColor: location.pathname == "/mycourses" && "#BDE148",
-          }}
-          onClick={() => navigate("/mycourses")}
-        >
-          My Courses
-        </h1>
+        {userData && (
+          <h1
+            className="cursor-pointer  hover:text-black px-3 py-1 rounded-full"
+            style={{
+              color: location.pathname == "/mycourses" ? "black" : null,
+              backgroundColor: location.pathname == "/mycourses" && "#BDE148",
+            }}
+            onClick={() => navigate("/mycourses")}
+          >
+            My Courses
+          </h1>
+        )}
         {/* <img
           src={assets.Images.ShopingCart}
           alt="cart"

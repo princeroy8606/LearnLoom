@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import NavBar from "../../components/global/NavBar";
 import Footer from "../../components/global/Footer";
 import assets from "../../assets/assets";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import { useDispatch } from "react-redux";
-import { buyCourse } from "../../redux/actions/courseActions";
+import { addCourseToCart, buyCourse } from "../../redux/actions/courseActions";
 import { gsap } from "gsap";
 import DetailsPgeTwo from "./DetailsPgeTwo";
 
@@ -13,10 +13,11 @@ const CourseDetails = () => {
   const { data } = useLocation()?.state;
   const { userData } = useAuth();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleBuy = () => {
-    dispatch(buyCourse({ userId: userData?._id, CourseId:[data?._id] }));
-  };  
+    dispatch(buyCourse({ userId: userData?._id, CourseId: [data?._id] }));
+  };
 
   useEffect(() => {
     const t1 = gsap.timeline();
@@ -32,6 +33,14 @@ const CourseDetails = () => {
     );
     //   return ()=>
   }, []);
+
+  const handleAddtoCart = (e) => {
+    if (userData) {
+      dispatch(addCourseToCart({ userId: userData?._id, courseId: data?._id }));
+    } else {
+      navigate("/auth");
+    }
+  };
 
   return (
     <div className="w-screen h-auto flex flex-col items-center">
@@ -67,8 +76,16 @@ const CourseDetails = () => {
                       <h2 className="text-white"> Buy Now</h2>
                     </div>
                     <h2>-or-</h2>
-                    <div className="w-[40%] h-12 bg-gray-700 rounded-[50rem] flex items-center justify-center cursor-pointer">
-                      <h2 className="text-white"> Add to cart </h2>
+                    <div
+                      className="w-[40%] h-12 bg-gray-700 rounded-[50rem] flex items-center justify-center cursor-pointer"
+                      onClick={() => handleAddtoCart()}
+                    >
+                      <h2 className="text-white">
+                        {" "}
+                        {data?.cart?.includes(userData?._id)
+                          ? "Added to Cart"
+                          : "Add to cart"}{" "}
+                      </h2>
                     </div>
                   </>
                 )}
