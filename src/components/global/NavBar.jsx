@@ -8,7 +8,7 @@ const NavBar = () => {
   const { userData } = useAuth();
   const location = useLocation();
   return (
-    <div className="w-[80%] h-16 bg-transparent flex items-center justify-between font-medium">
+    <div className="w-[80%] h-16 bg-transparent items-center justify-between font-medium hidden md:flex">
       <div className="w-fit h-[90%] bg-transparent flex items-center cursor-pointer">
         <h1>LearnLoom</h1>
       </div>

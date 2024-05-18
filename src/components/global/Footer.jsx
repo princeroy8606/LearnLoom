@@ -8,13 +8,13 @@ const Footer = () => {
           <h1 className="text-[2rem] font-semibold">LearnLoom</h1>
           <p>Its Yours To Take</p>
         </div>
-        <div className="footer-links">
+        <div className="footer-links hidden md:block">
           <p style={{ fontSize: "1.5rem", fontWeight: "300" }}>Navigation</p>
           <h1 to="/">Home</h1>
           <h1 to="/about-us">About Us</h1>
           <h1 to="/services">Services</h1>
         </div>
-        <div className="footer-links">
+        <div className="footer-links hidden md:block">
           <p style={{ fontSize: "1.5rem", fontWeight: "300" }}>Contact us</p>
           <p>24 Pasafic Avanue , India, </p>
           <p>princeroy8606@gmail.com</p>
