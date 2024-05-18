@@ -96,9 +96,9 @@ const Auth = () => {
 
   return (
     <div className="w-screen h-auto flex flex-col items-center relative">
-      <div className="absolute w-screen  items-center h-auto justify-center z-20 hidden md:flex">
+      {/* <div className="absolute w-screen  items-center h-auto justify-center z-20 flex "> */}
         <NavBar />
-      </div>
+      {/* </div> */}
       <div className="auth-bg w-[100%] h-[100vh] flex items-end justify-around lg:justify-center">
         <div className="h-[100%] w-[55%] hidden justify-end relative  lg:flex">
           <h1 className="text-[15rem] font-semibold text-white text-left ani-text">
@@ -122,7 +122,7 @@ const Auth = () => {
             <h1 className="text-[2rem] font-medium">Sign Up</h1>
           ) : (
             <div className="w-auto h-5rem flex flex-col items-center">
-              <h1 className="text-[3rem] font-medium">Welcome Back</h1>
+              <h1 className="text-[2rem] font-medium md:text-[3rem]">Welcome Back</h1>
               <p>Lets Hurry The Skilla are waiting</p>
             </div>
           )}
@@ -228,10 +228,10 @@ const Auth = () => {
             </div>
           )}
           <div
-            className="w-[80%] h-[4rem] flex items-center justify-center cursor-pointer bg-black rounded-2xl"
+            className="w-[80%] h-[3rem] flex items-center justify-center cursor-pointer bg-black rounded-2xl md:h-[4rem]"
             onClick={() => handleAction()}
           >
-            <h1 className="text-[1.5rem] font-semibold text-white">
+            <h1 className="text-[1.2rem] font-semibold text-white">
               {islogin ? "Login" : "SignUp"}
             </h1>
           </div>

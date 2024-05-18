@@ -2,7 +2,7 @@ import React from "react";
 import assets from "../../assets/assets";
 
 const DetailsPgeTwo = ({ data }) => {
-  return ( 
+  return (
     <div className="w-[80%] h-full pb-8">
       <div className="w-[40%] h-[8rem] flex flex-col justify-around mt-8 ">
         <img
@@ -14,14 +14,18 @@ const DetailsPgeTwo = ({ data }) => {
           Highly Practical
         </h1>
       </div>
-      <h1 className="text-[3rem] font-semibold ">What You'll Learn</h1>
+      <h1 className="text-[2rem] font-semibold md:text-[3rem]">
+        What You'll Learn
+      </h1>
       {data?.outcomes?.map((outcome) => (
-        <div className="w-[80%] h-[2rem] flex justify-between items-center mt-8">
+        <div className="w-[90%] flex justify-between items-center mt-8 md:h-[2rem] md:w-[80%]">
           <img
             src={assets.Images.Tick}
-            className="w-[10%] h-[50%] object-contain"
+            className="w-[8%] h-[1.2rem] object-contain md:h-[50%]"
           />
-          <h1 className="w-[90%] font-medium ">{outcome}</h1>
+          <h1 className="w-[90%] font-medium text-[.8rem] md:text-[1rem]">
+            {outcome}
+          </h1>
         </div>
       ))}
       <div className="w-[40%] h-[8rem] flex flex-col justify-around mt-8">
@@ -35,17 +39,20 @@ const DetailsPgeTwo = ({ data }) => {
           Target Students
         </h1>
       </div>
-      <h1 className="text-[3rem] font-semibold ">Who This Is For</h1>
+      <h1 className="text-[2rem] font-semibold md:text-[3rem]">
+        Who This Is For
+      </h1>
       {data?.target?.map((outcome) => (
-        <div className="w-[80%] h-[4rem] flex justify-between items-center mt-5">
+        <div className="w-[90%] flex justify-between items-center mt-8 md:h-[2.5rem] md:w-[80%]">
           <img
             src={assets.Images.Tick}
-            className="w-[10%] h-[50%] object-contain"
+            className="w-[8%] h-[50%] object-contain"
           />
-          <h1 className="w-[90%] font-medium ">{outcome}</h1>
+          <h1 className="w-[90%] font-medium text-[.8rem] md:text-[1rem]">
+            {outcome}
+          </h1>
         </div>
       ))}
-      
     </div>
   );
 };

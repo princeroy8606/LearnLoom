@@ -14,13 +14,13 @@ const NavBar = () => {
     const t1 = gsap.timeline();
     if (openMobileNav) {
       t1.to(".mobile-menu", {
-        x: 0,
+        xPercent: -100,
         duration: 0.3,
         ease: "power3.inOut",
         scale: 1,
       });
       t1.to(".mobile-nav-item", {
-        x: 0,
+        x: 10,
         opacity: 1,
         duration: 0.3,
         stagger: 0.1,
@@ -82,33 +82,35 @@ const NavBar = () => {
       <div className="md:hidden" onClick={() => setOpenMobileNav(true)}>
         Menu =
       </div>
-      <div className="absolute w-full h-screen bg-slate-200 top-0 right-0 z-40 flex flex-col items-center justify-start py-11 mobile-menu gap-16">
-        <div className="w-[90%] h-[3rem] flex items-center justify-between">
-          <h1 className="text-[1.2rem] text-lime-800 font-semibold">
-            LearnLoom
-          </h1>
-          <div
-            className="w-[2rem] h-[2rem] rounded-full bg-black flex items-center justify-center cursor-pointer"
-            onClick={() => setOpenMobileNav(false)}
-          >
-            <span className="text-white">X</span>
+      {window.screen.width <= 738 && (
+        <div className="absolute w-full h-screen bg-slate-200 top-0 right-0 z-50 flex flex-col items-center justify-start py-11 mobile-menu gap-16">
+          <div className="w-[90%] h-[3rem] flex items-center justify-between">
+            <h1 className="text-[1.2rem] text-lime-800 font-semibold">
+              LearnLoom
+            </h1>
+            <div
+              className="w-[2rem] h-[2rem] rounded-full bg-black flex items-center justify-center cursor-pointer"
+              onClick={() => setOpenMobileNav(false)}
+            >
+              <span className="text-white">X</span>
+            </div>
           </div>
-        </div>
-        <MobileNavItem label="Home" path="/" navigate={navigate} />
-        <MobileNavItem label="Courses" path="/courses" navigate={navigate} />
-        {userData && (
+          <MobileNavItem label="Home" path="/" navigate={navigate} />
+          <MobileNavItem label="Courses" path="/courses" navigate={navigate} />
+          {userData && (
+            <MobileNavItem
+              label="My Courses"
+              path="/mycourses"
+              navigate={navigate}
+            />
+          )}
           <MobileNavItem
-            label="My Courses"
-            path="/mycourses"
+            label={userData ? userData.name : "Login"}
+            path={userData ? "/profile" : "/auth"}
             navigate={navigate}
           />
-        )}
-        <MobileNavItem
-          label={userData ? userData.name : "Login"}
-          path={userData ? "/profile" : "/auth"}
-          navigate={navigate}
-        />
-      </div>
+        </div>
+      )}
     </div>
   );
 };

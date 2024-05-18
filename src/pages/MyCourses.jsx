@@ -21,8 +21,8 @@ const MyCourses = () => {
     <div className="w-screen flex flex-col items-center">
       <NavBar />
       <div className="w-[80%] min-h-[90vh] ">
-        <h1 className="text-[3rem] font-semibold">Enjoy Your Learing</h1>
-        <div className="w-[85%] h-auto flex flex-wrap gap-8 mt-8 p-2 ">
+        <h1 className="text-[1.8rem] font-semibold">Enjoy Your Learing</h1>
+        <div className="w-[100%] h-auto flex flex-wrap gap-8 mt-8 p-2 md:w-[85%]">
           {enrolledCourses.length > 0 &&
             enrolledCourses?.map((course, index) => (
               <CourseCard key={index} data={course} />

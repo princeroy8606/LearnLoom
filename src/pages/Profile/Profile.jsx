@@ -17,16 +17,16 @@ const Profile = () => {
   return (
     <div className="w-screnn h-auto flex flex-col items-center justify-center">
       <NavBar />
-      <div className="w-[80%] h-[90vh] flex justify-between items-center ">
-        <div className="w-[50%] h-full flex flex-col items-center justify-around border-r-2">
-          <div className="w-full h-[35%] flex items-center justify-center ">
+      <div className="w-[80%] h-auto flex flex-col justify-between items-center md:flex-row md:h-[90vh]">
+        <div className="w-full h-[50vh] flex flex-col items-center justify-around border-b-2 md:border-r-2 md:w-[80%] md:h-full">
+          <div className="w-[35%] h-[25%] flex items-center justify-center md:w-[15rem] md:h-[15rem] ">
             <img
               src={assets.Images.Profile}
               alt="profile"
-              className="w-[15rem] h-[15rem] rounded-full object-contain bg-[#D3F36B]"
+              className="w-full h-full rounded-full object-contain bg-[#D3F36B] md:h-[15rem]"
             />
           </div>
-          <div className="w-full h-[25%] flex flex-col items-center justify-around">
+          <div className="w-full h-[35%] flex flex-col items-center justify-around md:h-[25%]">
             <h1 className="text-[2rem] font-semibold ">{userData?.name}</h1>
             <h1 className="text-[1.3rem] font-semibold ">{userData?.email}</h1>
             <h1 className="text-[1.3rem] font-semibold ">{userData?.phone}</h1>
@@ -41,16 +41,16 @@ const Profile = () => {
             </h1>
           </div>
         </div>
-        <div className="w-full h-[90%] flex flex-col relative px-8">
+        <div className="w-full h-[90%] flex flex-col relative md:px-8">
           <img
             src={assets.Images.Stroke}
             alt="stroke"
             className=" absolute z-1 left-[10%] top-[3%] w-[25%]"
           />
-          <h1 className="text-[2rem] font-medium h-28 z-10 ">
+          <h1 className="text-[1.5rem] font-medium  z-10 md:text-[2rem]">
             Your Certificates
           </h1>
-          <div className="w-full h-[80%] flex flex-wrap gap-6">
+          <div className="w-full h-[80%] flex mt-3 gap-6 flex-wrap md:gap-6 ">
             <Certificate />
             {/* <Certificate color={"#000000"} /> */}
           </div>

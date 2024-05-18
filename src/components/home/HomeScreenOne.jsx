@@ -18,7 +18,7 @@ const HomeScreenOne = () => {
       { x: 0, opacity: 1, duration: 0.5 }
     );
     t1.fromTo(".stroke", { opacity: 0 }, { opacity: 1, duration: 0.2 });
-  });
+  },[]);
   return (
     <div className="w-[80%] h-[90vh] flex justify-between ">
       <div className="w-full h-[98%]  flex flex-col justify-around relative md:w-[50%]">
