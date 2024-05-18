@@ -23,7 +23,7 @@ const Landing = () => {
   return (
     <div className="w-[100vw]   flex flex-col items-center">
       <img
-        className="fixed w-[5rem] h-[5rem] object-contain shadow-xl right-2 bottom-2 rounded-[50%] shadow-lime-300 cursor-pointer"
+        className="fixed w-[3rem] h-[3rem] object-contain shadow-md right-2 bottom-2 rounded-[50%] shadow-lime-900 cursor-pointer md:w-[5rem] md:h-[5rem] p-2"
         src={assets.Images.ShopingCart}
         onClick={() => navigate("/cart")}
       />
